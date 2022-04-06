@@ -3,6 +3,7 @@ int main(){
   int a[] = {2, 3, 4, 1, 2 , 3, 1, 4, 7, 8, 9, 4};
   int b = sizeof(a)/sizeof(a[0]);
   int cari, c = 0, d = 0;
+  printf("Data pada array : ");
   for(int i = 0; i < b; i++){
     printf("%i ", a[i]);
   }
