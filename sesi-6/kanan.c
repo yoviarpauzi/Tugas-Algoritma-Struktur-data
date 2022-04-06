@@ -14,10 +14,10 @@ int main(){
       d = i;
     }
   }
-  if (c == 0){
-    printf("Nilai yang anda cari tidak ditemukan!\n");
-  }else if (c > 0){
+  if (c > 0){
     printf("Posisi terkanan angka %i ada pada index ke-%i\n", cari, d);
+  }else{
+    printf("Nilai yang anda cari tidak ditemukan!\n");
   }
   return 0;
 }
