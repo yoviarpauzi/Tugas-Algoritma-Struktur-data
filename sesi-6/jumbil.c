@@ -4,7 +4,14 @@ int main(){
     int a[N] = {2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4};
     int b, c = 0;
     printf("Data yang ada pada array : ");
-    printf("Inputkan banyaknya nilai yang akan dicari : ");
+    for (int i = 0; i < N; i++){
+        if (i == N-1){
+            printf("%i", a[i]);
+        }else{
+            printf("%i, ", a[i]);
+        }
+    }
+    printf("\nInputkan nilai yang akan dicari : ");
     scanf("%i", &b);
     for (int i = 0; i < N; i++){
         if(a[i] == b){
