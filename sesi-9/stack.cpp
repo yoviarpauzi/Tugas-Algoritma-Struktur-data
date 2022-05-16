@@ -3,7 +3,7 @@
 using namespace std;
 int posisi = 0, stack[max];
 void push(int a){
-    if(posisi == max - 1){
+    if(posisi == max){
         cout << "Stack penuh!!" << endl;
     }else{
         stack[posisi] = a;
