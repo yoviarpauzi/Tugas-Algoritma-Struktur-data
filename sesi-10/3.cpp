@@ -10,8 +10,8 @@ void Enqueue(){
     if(back == max){
         cout << "Antrian penuh!" << endl;
     }else{
-        cout << "Inputkan nama : " << endl;
-        cin >> nasabah[back].nama;
+        cout << "Inputkan nama : ";
+        getline(cin, nasabah[back].nama);
         menu:
         cout << "Menu layanan : " << endl;
         cout << "1. Tarik tunai" << endl;
@@ -21,6 +21,7 @@ void Enqueue(){
         cout << "5. Buka rekening" << endl;
         cout << "Pilih layanan : ";
         cin >> pilih;
+        cin.ignore(1,'\n');
         if(pilih == 1){
             nasabah[back].tujuan = "Tarik tunai";
         }else if(pilih == 2){
@@ -45,12 +46,13 @@ void Dequeue(){
         cout << "Antrian kosong!" << endl;
     }else{
         cout << "Nasabah dengan data : " << endl;
-        cout << "Nama   : " << nasabah[back].nama << endl;
-        cout << "Tujuan : " << nasabah[back].tujuan << endl;
+        cout << "Nama   : " << nasabah[front].nama << endl;
+        cout << "Tujuan : " << nasabah[front].tujuan << endl;
         cout << "Telah dipanggil dan keluar dari antrian" << endl;
         while(a < back){
             nasabah[a].nama = nasabah[a+1].nama;
             nasabah[a].tujuan = nasabah[a+1].tujuan;
+            a++;
         }
         back--;
     }
@@ -62,6 +64,7 @@ void View(){
     while(a < back){
         cout << "Nama   : " << nasabah[a].nama << endl;
         cout << "Tujuan : " << nasabah[a].tujuan << endl;
+        a++;
     }
     cout << endl;
 }
