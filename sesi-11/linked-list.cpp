@@ -5,6 +5,13 @@ struct Node{
     int data;
     Node *next;
 }*head, *tail, *cur, *newnode;
+bool isEmpty(){
+    if(head == NULL){
+        return true;
+    }else{
+        return false;
+    }
+}
 void addLast(){
     newnode = new Node();
     newnode->data = x;
@@ -60,6 +67,7 @@ void delFirst(){
         del = head;
         head = head->next;
         delete del;
+        cout << "Data paling depan berhasil dihapus!!" << endl;
     }else{
         cout << "Data pada Linked List kosong!!" << endl;
     }
@@ -67,15 +75,19 @@ void delFirst(){
 void delLast(){
     Node *del;
     cur = head;
-    while(cur->next != tail){
-        cur = cur->next;
+    if(isEmpty()){
+        cout << "Data pada linked list kosong!!" << endl;
+    }else{
+        while(cur->next != tail){
+            cur = cur->next;
+        }
+        del = cur->next;
+        cur->next = tail;
+        tail = cur;
+        tail->next = NULL;
+        delete del;
+        cout << "Data paling belakang telah dihapus!!" << endl;
     }
-    del = cur->next;
-    cur->next = tail;
-    tail = cur;
-    tail->next = NULL;
-    delete del;
-    cout << "Data paling belakang telah dihapus!!" << endl;
 } 
 void delData(){
     int b;
@@ -114,11 +126,15 @@ void input(){
     cin >> x;   
 }
 void printLinkList(){
-    cout << "Menampilkan data : " << endl;
-    cur = head;
-    while(cur != NULL){
-        cout << cur->data << endl;
-        cur = cur->next;
+    if(isEmpty()){
+        cout << "Data pada linked list kosong!!" << endl;
+    }else{
+        cout << "Menampilkan data : " << endl;
+        cur = head;
+        while(cur != NULL){
+            cout << cur->data << endl;
+            cur = cur->next;
+        }
     }
 }
 int main(){
