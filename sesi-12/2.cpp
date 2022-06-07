@@ -40,7 +40,7 @@ void find(Tree *root, int x){
 		find(root->left, x);
 	}
 }
-// fungsi untuk mencari nilai min pada node
+// fungsi untuk mencari nilai minimal pada node
 Tree *minValueNode(Tree *node)
 {
     Tree *cur = node;
