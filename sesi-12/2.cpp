@@ -41,9 +41,9 @@ void find(Tree *root, int x){
 	}
 }
 // fungsi untuk mencari nilai minimal pada node
-Tree *minValueNode(Tree *node)
+Tree *minValueNode(Tree *root)
 {
-    Tree *cur = node;
+    Tree *cur = root;
     while (cur && cur->left != NULL)
         cur = cur->left;
  
